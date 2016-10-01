@@ -49,6 +49,7 @@ class DetailShop extends Component{
     return(
       <View style={styles.container}>
         <View style={styles.product_container}>
+          <ScrollView>
           <View style={styles.shop_modal}>
             <View style={styles.icon}>
               <ShopModalEdit
@@ -71,14 +72,13 @@ class DetailShop extends Component{
             </View>
           </View>
           <View>
-            <ScrollView>
             <ProductList 
               shop_ID = {this.props.shop.shop_ID}
               addPirce={(price) => this.totalPrice(price)}       
             />
-            </ScrollView>
-          </View>
+          </View></ScrollView>
         </View>
+        
         <View style={styles.total}>
           <TouchableHighlight
             onPress={() => this.deleteshop()}
@@ -107,7 +107,7 @@ var styles = StyleSheet.create({
     flex: 1
   },
   product_container: {
-    flex: 8
+    flex: 6
   },
   shop_modal: {
     flexDirection: 'row',

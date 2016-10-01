@@ -117,7 +117,7 @@ var styles = StyleSheet.create({
     backgroundColor: 'lightsalmon',
     marginBottom: 1,
     width: width,
-    height: 50
+    height: 150
   },
   name_container: {
     flex: 4,

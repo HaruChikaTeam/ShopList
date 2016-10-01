@@ -15,13 +15,11 @@ const scenes = Actions.create(
   <Scene key="root">
     <Scene key="Shop"  
            navigationBarStyle={{backgroundColor:'yellowgreen'}} 
-           titleStyle={{color:'floralwhite'}}>
+           titleStyle={{color:'snow'}}>
       <Scene key="list" 
              component={ShopList} 
              title="Shop List" 
-             initial={true}
-             onRight={()=> {Actions.add()}} 
-             rightTitle="Add" />
+             initial={true} />
       <Scene key="add" 
               component={ShopAdd} 
               title="Shop Add" />

@@ -23,7 +23,7 @@ class Shop extends Component{
       <TouchableHighlight onPress={() => this.showDetailShop(this.props)}>
         <View style={styles.shop_container}>
           <View style={styles.icon}>
-            <Icon name="shopping-bag" size={40} color="white" />
+            <Icon name="shopping-bag" size={40} color="snow" />
           </View>
           <View style={styles.shop}>
             <Text style={styles.shop_name}>{this.props.shop_name}</Text>
@@ -43,10 +43,10 @@ var styles = StyleSheet.create({
   shop_container: {
     flex: 1,
     flexDirection: 'row',
-    backgroundColor: 'lightcoral',
+    backgroundColor: 'cadetblue',
     marginBottom: 1,
     width: width,
-    height: 70
+    height: 75
   },
   icon: {
     flex: 1,
@@ -59,12 +59,12 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
   },
   shop_name: {
-    color: "white",
+    color: "snow",
     fontSize: 25,
     marginBottom: 2,
   },
   shop_adress: {
-    color: "white",
+    color: "snow",
     fontSize: 15
   }
 });

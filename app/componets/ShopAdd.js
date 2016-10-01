@@ -24,8 +24,9 @@ class ShopAddApp extends Component{
     return (
       <View style={styles.container}>
          <AddShop
-          onAddClick={(shop_name, product) => this.addshop(shop_name, product)
-          }
+          onAddClick={(shop_name, product) => this.addshop(shop_name, product)}
+          shop_name = {""}
+          place = {""}
         />
       </View>
     );

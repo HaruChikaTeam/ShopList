@@ -114,10 +114,10 @@ var styles = StyleSheet.create({
   product_container: {
     flex: 1,
     flexDirection: 'row',
-    backgroundColor: 'lightsalmon',
+    backgroundColor: 'yellowgreen',
     marginBottom: 1,
     width: width,
-    height: 150
+    height: 50
   },
   name_container: {
     flex: 4,

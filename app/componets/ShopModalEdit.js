@@ -38,6 +38,7 @@ class ShopModalEdit extends Component{
   }
 
    render(){
+    console.log(this.props);
     return(
       <View>
         <Modal
@@ -52,6 +53,8 @@ class ShopModalEdit extends Component{
               onAddClick={(shop_name, place) =>
                this.editshop(this.props.shop.rowID, shop_name, place)
               }
+              shop_name = {this.props.shop.shop_name}
+              place = {this.props.shop.address}
             />
 
           </View>
@@ -62,10 +65,9 @@ class ShopModalEdit extends Component{
           <TouchableHighlight onPress={() => {
             this.setModalVisible(true)
           }}>
-            <View>
-              <View style={styles.plus_icon}>
-                <Icon name="pencil" size={40} color="white" />
-              </View>
+            <View style={styles.shop}>
+              <Text style={styles.shop_name}>{this.props.shop.shop_name}</Text>
+              <Text style={styles.shop_adress}>{this.props.shop.address}</Text>
             </View>
           </TouchableHighlight>
         </View>
@@ -88,16 +90,25 @@ var styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 10,
   },
-  mesagee: {
-
-  },
   add_titile: {
     color: "white",
     fontSize: 10,
   },
   plus_icon: {
     margin: 5
-  }
+  },
+  shop:{
+    marginLeft: 10
+  },
+  shop_name: {
+    color: "white",
+    fontSize: 15,
+    marginBottom: 2,
+  },
+  shop_adress: {
+    color: "white",
+    fontSize: 10
+  },
 
 });
 

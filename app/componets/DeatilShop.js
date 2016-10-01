@@ -28,7 +28,7 @@ class DetailShop extends Component{
 
   constructor(props) {
     super(props);
-    
+
     this.state = { total_price: 0 };
   }
 
@@ -50,33 +50,31 @@ class DetailShop extends Component{
       <View style={styles.container}>
         <View style={styles.product_container}>
           <ScrollView>
-          <View style={styles.shop_modal}>
-            <View style={styles.icon}>
-              <ShopModalEdit
-                {...this.props}
+            <View style={styles.shop_modal}>
+              <View style={styles.shop}>
+                <ShopModalEdit
+                  {...this.props}
+                />
+              </View>
+
+              <View style={styles.addproduct}>
+                <ProductModalAdd 
+                  {...this.props}
+                />
+              </View>
+            </View>
+            <View style={styles.product}>
+              <View style={styles.shop}>
+                <Text style={styles.shop_adress}>Product/Price</Text>
+              </View>
+            </View>
+            <View>
+              <ProductList 
+                shop_ID = {this.props.shop.shop_ID}
+                addPirce={(price) => this.totalPrice(price)}       
               />
             </View>
-            <View style={styles.shop}>
-              <Text style={styles.shop_name}>{this.props.shop.shop_name}</Text>
-              <Text style={styles.shop_adress}>{this.props.shop.address}</Text>
-            </View>
-            <View style={styles.addproduct}>
-              <ProductModalAdd 
-                {...this.props}
-              />
-            </View>
-          </View>
-          <View style={styles.product}>
-            <View style={styles.shop}>
-              <Text style={styles.shop_adress}>Product/Price</Text>
-            </View>
-          </View>
-          <View>
-            <ProductList 
-              shop_ID = {this.props.shop.shop_ID}
-              addPirce={(price) => this.totalPrice(price)}       
-            />
-          </View></ScrollView>
+          </ScrollView>
         </View>
         
         <View style={styles.total}>
@@ -111,10 +109,10 @@ var styles = StyleSheet.create({
   },
   shop_modal: {
     flexDirection: 'row',
-    backgroundColor: 'lightcoral',
+    backgroundColor: 'cadetblue',
     marginBottom: 1,
     width: width,
-    height: 70
+    height: 50
   },
   icon: {
     flex: 1,
@@ -125,15 +123,6 @@ var styles = StyleSheet.create({
   shop:{
     flex: 4,
     justifyContent: 'center',
-  },
-  shop_name: {
-    color: "white",
-    fontSize: 20,
-    marginBottom: 2,
-  },
-  shop_adress: {
-    color: "white",
-    fontSize: 15
   },
   product: {
     backgroundColor: 'yellowgreen',
@@ -149,7 +138,7 @@ var styles = StyleSheet.create({
     marginBottom: 1,
     padding: 10,
     width: width,
-    height: 50
+    height: 20
   },
   tatal_icon: {
     flex: 1,
@@ -166,7 +155,16 @@ var styles = StyleSheet.create({
     flex: 2,
     justifyContent: 'center',
     alignItems: 'center',
-  }
+  },
+  shop_name: {
+    color: "white",
+    fontSize: 20,
+    marginBottom: 2,
+  },
+  shop_adress: {
+    color: "white",
+    fontSize: 15
+  },
 
 });
 

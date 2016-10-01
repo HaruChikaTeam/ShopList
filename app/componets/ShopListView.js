@@ -3,8 +3,7 @@ import {
   StyleSheet,
   View,
   Dimensions,
-  ListView,
-  ScrollView
+  ListView
 } from 'react-native';
 import { connect } from 'react-redux';
 import { 
@@ -68,13 +67,11 @@ class ShopListView extends Component {
   }
   render() {
     return(
-      <ScrollView>
         <ListView
           style={styles.container}
           dataSource={this.state.dataSource}
           renderRow={this.renderEntry.bind(this)}
         />
-      </ScrollView>
     );
   }
 
@@ -89,16 +86,9 @@ ShopListView.propTypes = {
 var width = Dimensions.get('window').width;
 
 var styles = StyleSheet.create({
-  container: {
-    top: 65
-  },
   shop: {
     flex: 1,
-    flexDirection: 'row',
-    backgroundColor: 'gray',
-    marginBottom: 1,
-    width: width,
-    height: 70
+    flexDirection: 'row'
   }
 })
 

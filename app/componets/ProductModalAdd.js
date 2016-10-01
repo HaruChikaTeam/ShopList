@@ -40,11 +40,12 @@ class ProductModalAdd extends Component{
     return(
       <View>
         <Modal
-          animationType={"fade"}
+          animationType={"slide"}
           transparent={true}
           visible={this.state.modalVisible}
         >
          <View style={styles.container}>
+      
           <View style={styles.main}>
             
             <AddProduct
@@ -53,6 +54,15 @@ class ProductModalAdd extends Component{
               }
             />
 
+          </View>
+          <View style={styles.times_circle}>
+            <TouchableHighlight
+              onPress={() => this.setModalVisible(!this.state.modalVisible)}
+            >
+              <View>
+               <Icon name="times-circle" size={50} color="#FF4081" />
+              </View>
+            </TouchableHighlight>
           </View>
          </View>
         </Modal>
@@ -65,7 +75,6 @@ class ProductModalAdd extends Component{
               <View style={styles.plus_icon}>
                 <Icon name="plus" size={40} color="white" />
               </View>
-              <Text style={styles.add_titile}>Add Product</Text>
             </View>
           </TouchableHighlight>
         </View>
@@ -84,10 +93,17 @@ var styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)'
   },
   main:{
-    margin: 20,
+    marginRight: 20,
+    marginLeft: 20,
     backgroundColor: 'white',
     borderRadius: 10,
     alignItems: 'center',
+  },
+  times_circle: {
+    position: 'absolute',
+    right: 10,
+    top: width / 2 - 10
+
   },
   mesagee: {
 

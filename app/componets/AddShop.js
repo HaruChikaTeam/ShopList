@@ -12,8 +12,6 @@ import {
   mdl,
 } from 'react-native-material-kit';
 
-import Button from 'react-native-button';
-
 import { Actions } from 'react-native-router-flux';
 
 var styles = StyleSheet.create({
@@ -55,13 +53,16 @@ const AddButton = MKButton.accentColoredButton()
 var AddShop = React.createClass({
 
   propTypes: {
+    shop_name: React.PropTypes.string.isRequired,
+    place: React.PropTypes.string.isRequired,
     onAddClick: React.PropTypes.func.isRequired
   },
 
   getInitialState: function() {
+    console.log(this.props);
     return { 
-      shop_name: "",
-      product: ""
+      shop_name: this.props.shop_name,
+      product: this.props.place
     };
   },
 
